@@ -1,7 +1,8 @@
-import type { NextConfig } from "next";
+// next.config.js
 
-const nextConfig: NextConfig = {
-  /* config options here */
+module.exports = {
+  images: {
+    domains: ['tse1.mm.bing.net', 'tse2.mm.bing.net', 'example.com'], // Add other domains as needed
+  },
+  reactStrictMode: true, // Enable React Strict Mode (optional)
 };
-
-export default nextConfig;

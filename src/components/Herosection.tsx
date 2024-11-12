@@ -1,6 +1,13 @@
-// components/Herosection.tsx
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
+
+// Reusable Button Component
+const Button = ({ text, className, onClick }: { text: string; className: string; onClick?: () => void }) => (
+  <button onClick={onClick} className={`text-white py-2 px-4 mt-4 rounded ${className}`}>
+    {text}
+  </button>
+);
 
 function Herosection() {
   return (
@@ -19,7 +26,7 @@ function Herosection() {
                   placeholder="Search your car"
                   className="border p-2 rounded"
                 />
-                <button className="ml-2 bg-blue-500 text-white px-4 py-2 rounded">Search</button>
+                <Button text="Search" className="ml-2 bg-blue-500" />
               </div>
               <div className="hero-button flex items-center mt-4 bg-blue-100 p-2 rounded-full">
                 <span className="mr-2 text-blue-700">Advanced Filter</span>
@@ -41,7 +48,6 @@ function Herosection() {
 
         {/* Combined Section for Posting Ads and Trying PakWheels */}
         <div className="flex justify-center gap-10 mt-8">
-
           {/* Left Section */}
           <div className="flex flex-col items-center p-4 border rounded shadow-md">
             <h3 className="text-2xl text-blue-500 text-center">Post Your Ad on PakWheels</h3>
@@ -51,7 +57,7 @@ function Herosection() {
               <li>Sell your car fast at the best price</li>
             </ul>
             <Link href="/post-ad">
-              <button className="text-center text-white bg-red-700 py-2 px-4 mt-4">Post Your Ad</button>
+              <Button text="Post Your Ad" className="bg-red-700" />
             </Link>
           </div>
 
@@ -64,24 +70,29 @@ function Herosection() {
               <li>We ensure a safe and secure transaction</li>
             </ul>
             <Link href="/register-car">
-              <button className="text-center text-white bg-blue-700 py-2 px-4 mt-4">Register Your Car</button>
+              <Button text="Register Your Car" className="bg-blue-700" />
             </Link>
           </div>
         </div>
 
         <div className="text-center text-3xl py-10">OR</div>
-
       </div>
 
       {/* Featured New Car Section */}
       <div className="flex flex-col items-center mt-10">
         <h1 className="text-3xl">Featured New Cars</h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 mt-6">
-
           {/* Car Card: Toyota Corolla */}
           <Link href="/car/toyota-corolla">
             <div className="feature-main text-center border p-4 rounded shadow-md cursor-pointer">
-              <img src="https://tse1.mm.bing.net/th?id=OIP._HDaSvFqfrE3xavKQwErlAAAAA&pid=Api&P=0&h=220" alt="Toyota Corolla" className="mt-4" />
+              <Image
+                src="https://tse1.mm.bing.net/th?id=OIP._HDaSvFqfrE3xavKQwErlAAAAA&pid=Api&P=0&h=220"
+                alt="Toyota Corolla"
+                width={220}
+                height={220}
+                className="mt-4"
+                priority
+              />
               <h2 className="text-blue-700">Toyota Corolla</h2>
               <p className="text-green-500">PKR 38 Lakh</p>
               <p>Launching on 2 December 2024</p>
@@ -91,7 +102,13 @@ function Herosection() {
           {/* Car Card: Honda Civic */}
           <Link href="/car/honda-civic">
             <div className="feature-main text-center border p-4 rounded shadow-md cursor-pointer">
-              <img src="https://tse1.mm.bing.net/th?id=OIP.fM9Cs9WheRGvEadagdmrMQHaEK&pid=Api&P=0&h=220" alt="Honda Civic" className="mt-4" />
+              <Image
+                src="https://tse1.mm.bing.net/th?id=OIP.fM9Cs9WheRGvEadagdmrMQHaEK&pid=Api&P=0&h=220"
+                alt="Honda Civic"
+                width={220}
+                height={220}
+                className="mt-4"
+              />
               <h2 className="text-blue-700">Honda Civic</h2>
               <p className="text-green-500">PKR 85 Lakh</p>
               <p>Launching on 16 January 2025</p>
@@ -101,7 +118,13 @@ function Herosection() {
           {/* Car Card: Land Cruiser */}
           <Link href="/car/land-cruiser">
             <div className="feature-main text-center border p-4 rounded shadow-md cursor-pointer">
-              <img src="https://tse1.mm.bing.net/th?id=OIP.7NNgII4raoXdqZ4tIqgO-AHaEW&pid=Api&P=0&h=220" alt="Land Cruiser" className="mt-4" />
+              <Image
+                src="https://tse1.mm.bing.net/th?id=OIP.7NNgII4raoXdqZ4tIqgO-AHaEW&pid=Api&P=0&h=220"
+                alt="Land Cruiser"
+                width={220}
+                height={220}
+                className="mt-4"
+              />
               <h2 className="text-blue-700">Land Cruiser</h2>
               <p className="text-green-500">PKR 3.0 Crore</p>
               <p>Launching on 14 August 2025</p>
@@ -111,7 +134,13 @@ function Herosection() {
           {/* Car Card: Suzuki */}
           <Link href="/car/suzuki">
             <div className="feature-main text-center border p-4 rounded shadow-md cursor-pointer">
-              <img src="https://tse2.mm.bing.net/th?id=OIP.Ta7DkZVHUdTo87Q0ynxOBgHaEA&pid=Api&P=0&h=220" alt="Suzuki" className="mt-4" />
+              <Image
+                src="https://tse2.mm.bing.net/th?id=OIP.Ta7DkZVHUdTo87Q0ynxOBgHaEA&pid=Api&P=0&h=220"
+                alt="Suzuki"
+                width={220}
+                height={220}
+                className="mt-4"
+              />
               <h2 className="text-blue-700">Suzuki</h2>
               <p className="text-green-500">PKR 30 Lakh</p>
               <p>Launching on 9 November 2025</p>

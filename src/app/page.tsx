@@ -1,15 +1,19 @@
 import Herosection from "@/components/Herosection";
-import { title } from "process";
+import Head from "next/head"; // Import the Head component
 
-export const metadata ={
-  title:"Home"
-}
+export const metadata = {
+  title: "Home",
+};
 
 export default function Home() {
   return (
-  <div>
-    
-    <Herosection/>
-  </div>
+    <div>
+      {/* Set the page title using the metadata */}
+      <Head>
+        <title>{metadata.title}</title>
+      </Head>
+
+      <Herosection />
+    </div>
   );
 }
